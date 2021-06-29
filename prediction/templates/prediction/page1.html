@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{%load static%}
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'assets/images/logo.JPG' %}" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Prediction</title>
+  <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/formstyler/jquery.formstyler.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/formstyler/jquery.formstyler.theme.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/datepicker/jquery.datetimepicker.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+  <link rel="preload" as="style" href="{% static 'assets/mobirise/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+  
+  
+  
+  
+</head>
+<body>
+  
+  <section class="menu menu1 cid-skuQwwlkzm" once="menu" id="menu1-s">
+    
+
+    <nav class="navbar navbar-dropdown navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-success display-7" href="https://mobiri.se">Diabetes Prediction System</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'prediction:Home' %}">
+                            Home</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'FAQs' %}">
+                            FAQs</a></li>
+                    </ul>
+                
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="form7 cid-skuQ8U1J1C" id="form7-r">
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">Diabetes Prediction</h3>
+            
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form" >
+                <form  action="result" class="mbr-form form-with-styler mx-auto" >
+                     {% csrf_token %}
+                    <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">
+                        We help you perform online diabetes prediction.
+                    </p>
+                    <div class="">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling
+                            out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
+                            problem!</div>
+                    </div>
+                    <div class="dragArea row">
+                       <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="gender" name="n0">
+      <select class="custom-select col-sm-12" required="" id="inlineFormCustomSelect">
+        <option selected>Gender</option>
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+    </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" >
+                            <input type="number" name="n1" required="" placeholder="Bmi" data-form-field="number" class="form-control" value="" id="Bmi"  min="1" max="50">
+                        </div>
+                        <div  class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <input type="number" step="0.1"  name="n2" required="" placeholder="HbA1c" data-form-field="number" class="form-control" value="" id="HbA1c" min="1" max="12">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <input type="number" name="n3" required="" placeholder="Age" data-form-field="number" class="form-control" value="" id="Age" min="1">
+                        </div>
+                        <div  class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <input type="number" name="n4" required="" placeholder="Glucose Level(Fasting)" data-form-field="number" class="form-control" value="" id="Glucose" min="1" max="600">
+                        </div>
+                        <div  class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <input type="number" name="n5" required="" placeholder="Glucose Level(Before Meal)" data-form-field="number" class="form-control" value="" id="Glucose1" min="1" max="600">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <input type="number" name="n6" required="" placeholder="Glucose Level(After 2 hour of meal)" data-form-field="number" class="form-control" value="" id="Glucose2" min="1" max="600">
+                        </div>
+                        <div class="col-auto mbr-section-btn align-center">
+                            <button type="submit" class="btn btn-primary display-4">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/k" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Develop a free <a href="https://mobirise.site/y" style="color:#aaa;">website</a> with Mobirise</p></section><script src="{% static 'assets/web/assets/jquery/jquery.min.js' %}"></script>  <script src="{% static 'assets/popper/popper.min.js' %}"></script>  <script src="{% static 'assets/tether/tether.min.js' %}"></script>  <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>  <script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>  <script src="{% static 'assets/formstyler/jquery.formstyler.js' %}"></script>  <script src="{% static 'assets/formstyler/jquery.formstyler.min.js' %}"></script>  <script src="{% static 'assets/datepicker/jquery.datetimepicker.full.js' %}"></script>  <script src="{% static 'assets/dropdown/js/nav-dropdown.' %}'"></script>  <script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>  <script src="{% static 'assets/touchswipe/jquery.touch-swipe.min.js' %}"></script>  <script src="{% static 'assets/theme/js/script.js' %}"></script>  <script src="{% static 'assets/formoid/formoid.min.js' %}"></script>
+  
+  
+</body>
+</html>
